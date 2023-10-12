@@ -6,7 +6,7 @@
         $ips = request()->ip();
 @endphp
 @can('manager')
-    <div class="sticky-top px-2">
+    <div class="px-2">
         <button class="btn btn-sm btn-dark mt-2" data-bs-toggle="modal" data-bs-target="#m_add_group">
             +<i class='bx bx-group'></i>
         </button>
@@ -18,22 +18,22 @@
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Group</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('language.new') }}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="input-group mb-3">
-                            <span class="input-group-text">ID Group</span>
+                            <span class="input-group-text">ID {{ __('language.group') }}</span>
                             <input type="text" class="form-control" name="id_group">
                         </div>                    
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Name Group</span>
+                            <span class="input-group-text">{{ __('language.name') }} {{ __('language.group') }}</span>
                             <input type="text" class="form-control" name="name_group">
                         </div>                    
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('language.close') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('language.save') }}</button>
                     </div>
                 </div>
             </form>
@@ -51,7 +51,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">ID</th>
-                            <th scope="col">Group</th>
+                            <th scope="col">{{ __('language.group') }}</th>
                             @can('manager')
                             <th scope="col" class="text-center">...</th>
                             @endcan

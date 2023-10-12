@@ -1,0 +1,28 @@
+<?php 
+return [
+    'home'=>'Trang chủ',
+    'user'=>'Người dùng',
+    'group'=>'Nhóm',
+    'search'=>'Tìm',
+    'login'=>'Đăng nhập',
+    'logout'=>'Đăng xuất',
+    'register'=>'Đăng ký',
+    'forgot'=>'Quên mật khẩu',
+    'scanQr'=>'Đăng nhập và quét QRCODE',
+    'close'=>'Đóng',
+    'name'=>'Tên',
+    'address'=>'Địa chỉ',
+    'telecom'=>'Nhà mạng',
+    'gender'=>'Giới tính',
+    'role'=>'Vai trò',
+    'update'=>'Cập nhật',
+    'save'=>'Lưu',
+    'new'=>'Thêm mới',
+    'language'=>'Ngôn ngữ',
+    'remember'=>'Ghi nhớ tôi',
+    'male'=>'Nam',
+    'female'=>'Nữ',
+    'other'=>'Khác',
+    'manager'=>'Quản lý',
+];
+?>

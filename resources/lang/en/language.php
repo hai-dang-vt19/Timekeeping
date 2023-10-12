@@ -1,0 +1,28 @@
+<?php 
+return [
+    'home'=>'Home',
+    'user'=>'User',
+    'group'=>'Group',
+    'search'=>'Search',
+    'login'=>'Login',
+    'logout'=>'Logout',
+    'register'=>'Register',
+    'forgot'=>'Forgot your password?',
+    'scanQr'=>'Login and scan QRCODE',
+    'close'=>'Close',
+    'name'=>'Name',
+    'address'=>'Address',
+    'telecom'=>'Telecom Operator',
+    'gender'=>'Gender',
+    'role'=>'Role',
+    'update'=>'Update',
+    'save'=>'Save',
+    'new'=>'New',
+    'language'=>'Language',
+    'remember'=>'Remember Me',
+    'male'=>'Male',
+    'female'=>'Female',
+    'other'=>'Other',
+    'manager'=>'Manager',
+];
+?>

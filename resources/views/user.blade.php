@@ -13,7 +13,7 @@
                 ->get();
 @endphp
 @can('manager')
-    <div class="sticky-top px-2">
+    <div class="px-2">
         <button class="btn btn-sm btn-dark mt-2" data-bs-toggle="modal" data-bs-target="#m_add_user">
             +<i class='bx bx-user'></i>
         </button>
@@ -25,12 +25,12 @@
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add user</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('language.new') }}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Name</span>
+                            <span class="input-group-text">{{ __('language.name') }}</span>
                             <input type="text" class="form-control" name="name_user">
                         </div>                     
                         <div class="input-group mb-3">
@@ -38,22 +38,22 @@
                             <input type="text" class="form-control" name="email_user">
                         </div>                     
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Gender</span>
+                            <span class="input-group-text">{{ __('language.gender') }}</span>
                             <select name="gender" id="" class="form-select">
-                                <option value="1">Nam</option>
-                                <option value="2">Nữ</option>
-                                <option value="3">Khác</option>
+                                <option value="1">{{ __('language.male') }}</option>
+                                <option value="2">{{ __('language.female') }}</option>
+                                <option value="3">{{ __('language.other') }}</option>
                             </select>
                         </div>                     
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Role</span>
+                            <span class="input-group-text">{{ __('language.role') }}</span>
                             <select name="roles" id="" class="form-select">
-                                <option value="1">Manager</option>
-                                <option value="2">User</option>
+                                <option value="1">{{ __('language.manager') }}</option>
+                                <option value="2">{{ __('language.user') }}</option>
                             </select>
                         </div>                     
                         <div class="input-group mb-3">
-                            <span class="input-group-text">Group</span>
+                            <span class="input-group-text">{{ __('language.group') }}</span>
                             <select id="" class="form-select" name="id_group">
                                 @foreach ($group as $item)
                                     <option value="{{ $item->id_group }}">{{ $item->name_group }}</option>
@@ -62,8 +62,8 @@
                         </div>                     
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('language.close') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('language.save') }}</button>
                     </div>
                 </div>
             </form>
@@ -80,11 +80,11 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">{{ __('language.name') }}</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Group</th>
+                            <th scope="col">{{ __('language.gender') }}</th>
+                            <th scope="col">{{ __('language.role') }}</th>
+                            <th scope="col">{{ __('language.group') }}</th>
                             @can('manager')
                                 <th scope="col">...</th>
                             @endcan
@@ -130,12 +130,12 @@
                     @csrf
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Update user</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('language.update') }}</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Name</span>
+                                <span class="input-group-text">{{ __('language.name') }}</span>
                                 <input type="text" class="form-control" name="name_user_up" value="{{ $item->name }}">
                             </div>   
                             <input type="hidden" name="id_up" value="{{ $item->id }}">               
@@ -144,17 +144,17 @@
                                 <input type="text" class="form-control" name="email_user_up" value="{{ $item->email }}">
                             </div>    
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Role</span>
+                                <span class="input-group-text">{{ __('language.role') }}</span>
                                 <select name="roles_up" id="" class="form-select">
                                     <option value="{{ $item->roles }}" selected>
-                                        @if ($item->roles == 1) Manager @else User @endif
+                                        @if ($item->roles == 1){{ __('language.manager') }} @else {{ __('language.user') }} @endif
                                     </option>
-                                    <option value="1">Manager</option>
-                                    <option value="2">User</option>
+                                    <option value="1">{{ __('language.manager') }}</option>
+                                    <option value="2">{{ __('language.user') }}</option>
                                 </select>
                             </div>                     
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Group</span>
+                                <span class="input-group-text">{{ __('language.group') }}</span>
                                 <select id="" class="form-select" name="id_group_up">
                                     <option value="{{ $item->id_group }}" selected>{{ $item->name_group }}</option>
                                     @foreach ($group as $item_gr)
@@ -163,21 +163,21 @@
                                 </select>
                             </div>                
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Gender</span>
+                                <span class="input-group-text">{{ __('language.gender') }}</span>
                                 <select name="gender_up" id="" class="form-select">
                                     <option value="{{ $item->gender }}" selected>
-                                        @if ($item->gender == 1) Nam @elseif($item->gender == 2) Nữ @else Khác @endif
+                                        @if ($item->gender == 1) {{ __('language.male') }} @elseif($item->gender == 2) {{ __('language.female') }} @else {{ __('language.other') }} @endif
                                     </option>
-                                    <option value="1">Nam</option>
-                                    <option value="2">Nữ</option>
-                                    <option value="3">Khác</option>
+                                    <option value="1">{{ __('language.male') }}</option>
+                                    <option value="2">{{ __('language.female') }}</option>
+                                    <option value="3">{{ __('language.other') }}</option>
                                 </select>
                             </div>    
                                         
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('language.close') }}</button>
+                            <button type="submit" class="btn btn-primary">{{ __('language.save') }}</button>
                         </div>
                     </div>
                 </form>
